@@ -33,3 +33,15 @@ function knightMoves(start, target) {
   }
   return null;
 }
+
+// pretty printer for knight moves result
+function displayKnightMoves(start, target) {
+  const path = knightMoves(start, target);
+  if (path === null) {
+    console.log(`No path found\n`);
+    return null;
+  }
+  console.log(`You made it in ${path.length - 1} moves! Here's your path: \n`);
+  path.forEach((position) => console.log(position));
+  return path;
+}
